@@ -11,15 +11,14 @@ function convertTemp() {
 
   
   let tempInCelsius;
-  if (from === "C") tempInCelsius = input;
-  else if (from === "F") tempInCelsius = (input - 32) * 5/9;
-  
+  if (from === "C" && to=== "C")
+     tempInCelsius = input;
+  else if (from === "F" && to==="F")
+     tempInCelsius = input;
+    else if (from==="C"&& to=="F")
+      tempInCelsius= (input*9/5)+32
+    else if (from==="F"&& to=="C")
+      tempInCelsius=(input-32)*5/9
 
-  
-  let converted;
-  if (to === "C") converted = tempInCelsius;
-  else if (to === "F") converted = (tempInCelsius * 9/5) + 32;
-
-
-  result.innerText = `${input}°${from} = ${converted.toFixed(2)}°${to}`;
+  result.innerText = `${input}°${from} = ${tempInCelsius.toFixed(2)}°${to}`;
 }
